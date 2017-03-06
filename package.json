@@ -1,0 +1,33 @@
+{
+  "name": "custom-elements",
+  "version": "0.0.0",
+  "description": "Duo Custom Elements",
+  "private": true,
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duosecurity/webcomponents.git"
+  },
+  "author": "Ryan Williamson-Cardneau <rcardneau@duosecurity.com>",
+  "bugs": {
+    "url": "https://github.com/duosecurity/design/issues"
+  },
+  "homepage": "https://github.com/duosecurity/design#readme",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "cssnano": "^3.7.1",
+    "eslint": "^3.0.1",
+    "eslint-plugin-import": "^1.10.2",
+    "gulp": "^3.9.1",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-postcss": "^6.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-util": "^3.0.7",
+    "through2": "^2.0.1"
+  }
+}

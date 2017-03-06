@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <title>Dropdown webcomponent</title>
+
+    <!-- Imports polyfill -->
+    <script type="text/javascript">
+    function loadScript(src) {
+        return new Promise(function(resolve, reject) {
+            const script = document.createElement('script');
+            script.src = src;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+            });
+        }
+    (function() {
+      if ('registerElement' in document
+          && 'import' in document.createElement('link')
+          && 'content' in document.createElement('template')) {
+        // platform is good!
+      } else {
+        loadScript('polyfill/custom-elements/custom-elements.min.js')
+        loadScript('polyfill/html-imports/html-imports.min.js')
+      }
+    })();
+    </script>
+
+    <!-- Imports custom element -->
+    <link rel="import" href="ui-components/dropdown/drop-down-lite.html">
+
+</head>
+<body>
+
+    <!-- Runs custom element -->
+    <drop-down role="navigation">
+        <dropdown-label button tabindex="0">
+            Add New...
+            <svg class="icon icon-downCarret"><use xlink:href="assets/duo-icons.svg#icon-thickDownCarret"></use></svg>
+        </dropdown-label>
+        <dropdown-content hidden>
+            <ul>
+                <li> <a data-mixpanel-event-type="user" href="/users/add"> User </a> </li>
+                <li> <a data-mixpanel-event-type="application" href="/applications/add"> Application </a> </li>
+                <li> <a data-mixpanel-event-type="group" href="/groups/add"> Group </a> </li>
+            </ul>
+        </dropdown-content>
+    </drop-down>
+
+    <script defer src="polyfill/svguse/svgxuse.min.js"></script>
+
+</body>
+</html>
