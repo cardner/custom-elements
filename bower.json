@@ -13,6 +13,7 @@
   ],
   "dependencies": {
     "html-imports": "webcomponents/html-imports#^1.0.0-alpha.1",
-    "custom-elements": "webcomponents/custom-elements#^1.0.0-alpha.4"
+    "custom-elements": "webcomponents/custom-elements#^1.0.0-alpha.4",
+    "svgxuse": "^1.2.2"
   }
 }

@@ -1,0 +1,21 @@
+@mixin box-shadow($shadows...) {
+  @if length($shadows) == 0 {
+    $shadows: 0 0 0 1px $white, 0 0 0 3px currentColor;
+  }
+  box-shadow: $shadows;
+}
+@mixin transitions($effects...) {
+  @if length($effects) == 0 {
+    $effects: all ease-in-out 150ms;
+  }
+    transition: $effects;
+}
+@mixin border-radius($radius: 3px) {
+  border-radius: $radius;
+}
+@mixin borders($border: 1px solid map-get($gray, light)) {
+  border: $border;
+}
+@mixin no-box-shadow {
+    box-shadow: none;
+}

@@ -23,6 +23,10 @@ gulp.task('page', () => (
         .pipe(gulp.dest('dist'))
 ))
 
+gulp.task('base_styles', () => (
+    gulp.src('')
+))
+
 
 gulp.task('styles', () => (
     gulp.src('ui-components/**/*.scss')

@@ -1,0 +1,47 @@
+%no-box-shadow {
+  @include box-shadow(none);
+}
+%button-reset {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+%button,
+button:not(.link),
+input[type="button"],
+input[type="src"]:not(.link) input[type="reset"] {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1em;
+    height: 40px;
+    @include border-radius;
+    border: 1px solid $button-border-color;
+    padding: 12px 20px;
+    color: $button-text-color;
+    background-color: transparent;
+    @include transitions(color $fast-ease, background-color $fast-ease, border $slow-ease, box-shadow $slow-ease);
+    box-shadow: none;
+
+    &:focus {
+        @include box-shadow;
+        outline: none;
+        border-color: currentColor;
+        background-color: transparent;
+        color: inherit;
+    }
+
+    &:active {
+        @include box-shadow(inset 0 0 10px -1px darken(map-get($blue, cta-light), 20%));
+        background-color: $primary-button-color;
+        color: $white;
+    }
+
+    &:hover {
+        background-color: $default-button-hover-color;
+        border-color: $default-button-hover-color;
+        color: $white;
+        cursor: pointer;
+    }
+}
