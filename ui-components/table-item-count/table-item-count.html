@@ -1,0 +1,33 @@
+<script>
+
+  // var select = document.getElementsByName('table-item-count-select');
+  //
+  // select.onclick = function {
+  //   console.log(select.value);
+  // }
+
+  class TableItemCountSelect extends HTMLElement {
+
+    var select = document.getElementsByName('table-item-count-select');
+
+    console.log(select);
+
+  }
+
+
+
+  // select.addEventListener('change', function() {
+  //   var index = select.selectedIndex;
+  //   console.log('Selected option index: ' + index);
+  // })
+
+  // imports are loaded and elements have been registered
+  window.addEventListener('DOMContentLoaded', e => {
+    console.log('web componenets ready');
+    // replace drop-down element with custom component
+    window.customElements.define('table-item-count', TableItemCount);
+    window.customElemets.define('table-item-count-select', TableItemCountSelect);
+    window.customElements.define('table-item-count-range', TableItemCountRange);
+    window.customElements.define('table-item-count-total', TableItemCountTotal);
+  })
+</script>
