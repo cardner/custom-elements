@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="search-bar.css">
+<script>
+    // // Use custom elements API v1 to register a new HTML tag and define its JS behavior
+    if (!doc) {
+       const doc = (document._currentScript || document.currentScript).ownerDocument; // importee
+    }
+
+    class SearchBar extends HTMLElement {
+
+        _setIconClass() {
+            if (this.noIcon) {
+                this.input.classList.add('no-icon');
+            } else {
+                this.input.classList.remove('no-icon');
+            }
+        }
+
+        _handleChange(val, onEnter=false) {
+            const notifyElem = document.querySelector(this.notifyElementSelector);
+            const notifyAttr = this.getAttribute('notify-attr') || 'search-param';
+
+            if (notifyElem) {
+                
+                if (onEnter) {
+                    notifyElem.setAttribute(notifyAttr, val);
+                } else {
+                    clearTimeout(this.timer);
+                    this.timer = setTimeout(() => {
+                        notifyElem.setAttribute(notifyAttr, val);
+                    }, this.getAttribute('notify-change-delay') || 750);
+                }
+
+            }
+
+        }
+
+        _onChanged() {
+            const val = this.input.value;
+            this._handleChange(val);
+        }
+
+        _onEnter(e) {
+            if (e.key === 'Enter') {
+                const val = this.input.value;
+                this._handleChange(val, true);
+            }
+        }
+
+        get noIcon() {
+            return this.hasAttribute('no-icon');
+        }
+
+        set noIcon(val) {
+            if (val) {
+                this.setAttribute('no-icon', '');
+            } else {
+                this.removeAttribute('no-icon');
+            }
+            return this.hasAttribute('no-icon')
+         }
+
+        get disabled() {
+            return this.hasAttribute('disabled');
+        }
+
+        set disabled(val) {
+            if (val) {
+              this.setAttribute('disabled', '');
+            } else {
+              this.removeAttribute('disabled');
+            }
+            return this.hasAttribute('disabled');
+        }
+
+        static get observedAttributes() {
+            return [
+                'no-icon',
+                'disabled',
+                // 'notify-element',
+                // 'notify-attr',
+                // 'notify-change-delay',
+                // 'notify-on-change',
+                // 'notify-on-enter'
+            ];
+        }
+
+        constructor() {
+            super(); // always call super() first in the constructor.
+            this.input = this.querySelector('input');
+            this.notifyElementSelector = this.getAttribute('notify-element');
+            this.timer = null;
+        }
+
+        connectedCallback() {
+            this.input.addEventListener('input', this._onChanged.bind(this));
+            this.input.addEventListener('keyup', this._onEnter.bind(this));
+        }
+
+        disconnectedCallback() {
+            clearTimeout(this.timer);
+        }
+
+        attributeChangedCallback(attr, oldValue, newValue) {
+            if (attr === 'no-icon') {
+                this._setIconClass();
+            }
+            if (attr === 'disabled') {
+                this.input.disabled = this.disabled;
+            }
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        window.customElements.define('search-bar', SearchBar);
+    });
+
+</script>

@@ -30,9 +30,17 @@
 
     <!-- Imports custom element -->
     <link rel="import" href="ui-components/dropdown/drop-down-lite.html">
+    <link rel="import" href="ui-components/searchbar/search-bar.html">
 
 </head>
 <body>
+
+    <div id="table"></div>
+    <search-bar notify-element="#table">
+        <input>
+    </search-bar>
+
+    <br><br>
 
     <!-- Runs custom element -->
     <drop-down role="navigation">
