@@ -1,5 +1,63 @@
 @import "../base";
 
-%table {
-  
+table {
+  width: 100%;
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  color: #363F44;
+  background-color: #FFFFFF;
+  text-align: left;
+  border-collapse: collapse;
+  svg {
+    display: inline-block;
+    width: 1.0em;
+    height: 0.4em;
+    line-height: 0;
+    stroke-width: 0;
+    color: #9B9B9B;
+    stroke: currentColor;
+    fill: currentColor;
+    vertical-align: bottom;
+    margin-bottom: 5px;
+  }
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: $default-text-size;
+  }
+}
+
+th,
+td {
+  border-bottom: solid 1px #CECECE;
+  padding: 1.0em 1.0em 2.0em;
+}
+
+th {
+  padding: 0.75em;
+  font-size: 1.0em;
+}
+
+td {
+  font-size: $default-text-size;
+  a {
+    color: #18A2D0;
+  }
+}
+
+span + span {
+  table & {
+    display: block;
+    font-size: 0.6875em;
+  }
+  td:first-of-type & {
+    text-transform: uppercase;
+  }
+}
+
+th:first-of-type,
+td:first-of-type {
+  width: 7.0em;
+  text-align: right;
 }
