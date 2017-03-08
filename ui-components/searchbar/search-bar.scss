@@ -1,0 +1,30 @@
+@import "../base";
+
+search-bar * {
+    box-sizing: border-box;
+}
+
+search-bar input {
+    transition-property: color, border-color, box-shadow;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    width: 100%;
+    padding: 6px 6px 6px 27px;
+    font-size: 90%;
+    color: #333;
+    line-height: 24px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    background: url(../../assets/magnifying-glass.png) 6px center no-repeat;
+}
+
+search-bar input.no-icon {
+    background: none;
+    padding: 6px;
+}
+
+search-bar[disabled] input {
+    opacity: .5;
+    cursor: not-allowed;
+}

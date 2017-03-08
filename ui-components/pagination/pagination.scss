@@ -1,0 +1,89 @@
+@import "../base";
+
+%disabled {
+    color: map-get($gray, mid);
+
+    &:active,
+    &:focus,
+    &:hover {
+        color: $disabled-text-color;
+        background-color: transparent;
+        cursor: not-allowed;
+    }
+}
+
+table-pagination {
+    all: initial;
+    contain: layout style;
+    display: inline-block;
+
+    a {
+        display: inline-block;
+        color: $default-text-color;
+        @include no-box-shadow;
+        padding: 0.125em 0.5em;
+        border-radius: 3px;
+        line-height: 1em;
+        border: none;
+        margin: 0 5px;
+        font-size: $default-text-size;
+        text-decoration: none;
+        @include transitions;
+        cursor: pointer;
+
+        &:hover {
+            background-color: map-get($blue, duo);
+            color: $white;
+            box-shadow: none;
+        }
+
+        &:active,
+        &:focus {
+            padding: 0.125em 0.5em;
+            @include box-shadow;
+        }
+
+        &[current] {
+            background-color: $primary-button-color;
+            color: $white;
+            font-weight: 500;
+
+            &:hover {
+                border: none;
+                color: $white;
+                cursor: default;
+            }
+        }
+        &[disabled] {
+            @extend %disabled;
+        }
+
+        &[hidden] {
+            display: none;
+        }
+    }
+}
+
+table-next,
+table-prev {
+    cursor: pointer;
+    display: inline-block;
+    width: 1.75em;
+    height: 1em;
+    vertical-align: text-top;
+    text-align: center;
+    svg {
+        width: 1em;
+        height: 1em;
+        fill: $default-button-color;
+        &:hover {
+            background-color: transparent;
+            fill: currentColor;
+            @include box-shadow(0 3px 0 0 currentColor);
+            border-radius: 0;
+        }
+    }
+    &[disabled] {
+        @extend %disabled;
+    }
+}
