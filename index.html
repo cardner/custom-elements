@@ -31,8 +31,15 @@
     <!-- Imports custom element -->
     <link rel="import" href="ui-components/searchbar/search-bar.html">
     <link rel="import" href="ui-components/dropdown/drop-down-lite.html">
+    <link rel="import" href="ui-components/pagination/pagination.html">
+    <link rel="import" href="ui-components/tbody-groups/tbody-groups.html">
+    <link rel="import" href="ui-components/table/table.html">
 
-
+    <style media="screen">
+        body * {
+            font-family: 'helvetica', helvetica, sans-serif;
+        }
+    </style>
 </head>
 <body>
 
@@ -57,6 +64,18 @@
             </ul>
         </dropdown-content>
     </drop-down>
+
+    <table-pagination data-pages="20" data-current="1">
+    </table-pagination>
+
+    <table is="duo-table" filter="" sort="" search-param="" display-start="" display-length="" search-src="assets/groups.json">
+        <thead>
+            <tr></tr>
+        </thead>
+        <tbody is="tbody-groups">
+
+        </tbody>
+    </table>
 
     <script defer src="polyfill/svgxuse/svgxuse.min.js"></script>
 

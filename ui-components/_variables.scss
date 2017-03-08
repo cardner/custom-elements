@@ -120,17 +120,6 @@ $policy-builder-help-text-grey: #757E81;
 $policy-builder-help-text-background-grey: #F8F8F8;
 $policy-builder-help-text-border-grey: #D0DCE2;
 
-
-//Color name translations
-$default-text-color: map-get($gray, dark);
-$mid-text-color: map-get($gray, mid);
-$default-button-color: map-get($gray, dark);
-$default-border-color: map-get($gray, light);
-$dark-border-color: map-get($gray, dark);
-$default-boxshadow-color: map-get($gray, dark);
-$default-link-color: $info-blue;
-$hover-link-color: #22729d;
-
 // Transitions
 $fast-ease: ease-in-out 200ms 0ms;
 $slow-ease: ease-in-out 125ms 0ms;
@@ -151,6 +140,7 @@ $info:          '\e0d0';
 //// Color name translations
 // Text names
 $default-text-color: map-get($gray, dark);
+$mid-text-color: map-get($gray, mid);
 $disabled-text-color: map-get($gray, mid);
 $button-text-color: map-get($blue, duo);
 
@@ -170,10 +160,18 @@ $button-border-color: map-get($blue, duo);
 // Box Shadows
 $default-boxshadow-color: map-get($gray, dark);
 
+// Links
+$default-link-color: $info-blue;
+$hover-link-color: #22729d;
+
 // UI Elements
 $search-icon-color: map-get($gray, mid);
 
 $success-green: map-get($green, duo);
+
+///////// Font Sizes
+$base-text-size: 1em;
+$default-text-size: 0.875rem;
 
 
 //////// Transitions

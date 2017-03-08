@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="table.css">
+
+<script type="text/javascript">
+
+    class DuoTable extends HTMLTableElement {
+
+        // Respond to attribute changes.
+         attributeChangedCallback(attr, oldValue, newValue) {
+
+             const apiSrc = this.getAttribute('search-src');
+
+             // Put logic here for gathering all the attributes into query string
+             this.querySelector('tbody').setAttribute('data-src', apiSrc);
+
+         }
+
+        constructor() {
+            super(); //  construct the original item to be extended, here it is the HTMLElement
+
+        }
+
+    }
+
+    window.addEventListener('DOMContentLoaded', e => {
+    // replace drop-down element with custom component
+    console.log('table ready!');
+        customElements.define('duo-table', DuoTable, {extends: 'table'});
+    })
+
+</script>

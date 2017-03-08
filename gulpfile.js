@@ -14,7 +14,7 @@ gulp.task('elements', () => (
             conservativeCollapse: true,
         }))
         .pipe(gulp.dest('dist/ui-components'))
-        // .pipe(browserSync.stream())
+        .pipe(browserSync.stream())
 ))
 
 
@@ -35,7 +35,7 @@ gulp.task('styles', () => (
             cssnano()
         ]))
         .pipe(gulp.dest('dist/ui-components'))
-        // .pipe(browserSync.stream())
+        .pipe(browserSync.stream())
 ))
 
 

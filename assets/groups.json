@@ -1,0 +1,18 @@
+{
+    "response": [{
+        "auths": "",
+        "count": 1,
+        "description": "bar desc",
+        "name": "group_bar",
+        "status": "Active",
+        "url_slug": "DGB41Y712S438G5VOO2C"
+    }, {
+        "auths": "",
+        "count": 3,
+        "description": "foo desc",
+        "name": "group_foo",
+        "status": "Active",
+        "url_slug": "DGYAHMXMWBUX2XLPGKTR"
+    }],
+    "stat": "OK"
+}
