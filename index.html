@@ -34,6 +34,8 @@
     <link rel="import" href="ui-components/pagination/pagination.html">
     <link rel="import" href="ui-components/tbody-groups/tbody-groups.html">
     <link rel="import" href="ui-components/table/table.html">
+    <link rel="import" href="ui-components/table-header/table-header.html">
+
 
     <style media="screen">
         body * {
@@ -76,6 +78,15 @@
 
         </tbody>
     </table>
+
+    <br><br>
+
+    <table-header sort="">
+      <span>Header Text</span>
+        <tableheader-sort>
+          <svg class="icon icon-upCarret"><use xlink:href="assets/duo-icons.svg#icon-thickUpCarret"></use></svg>
+        </tableheader-sort>
+    </table-header>
 
     <script defer src="polyfill/svgxuse/svgxuse.min.js"></script>
 

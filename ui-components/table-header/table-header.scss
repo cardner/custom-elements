@@ -1,0 +1,33 @@
+@import "../base";
+
+table-header {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    display: inline-block;
+}
+
+tableheader-sort {
+  background-color: #F7F7F7;
+  margin-left: 5px;
+  svg {
+      display: inline-block;
+      width: 1.0em;
+      height: 0.4em;
+      line-height: 0;
+      stroke-width: 0;
+      stroke: currentColor;
+      fill: currentColor;
+      color: #888;
+      vertical-align: bottom;
+      align-self: center;
+      margin-bottom: 5px;
+  }
+}
+
+tableheader-sort[desc] {
+  svg {
+      transform: rotate(180deg);
+  }
+}
