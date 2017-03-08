@@ -1,108 +1,19 @@
 <!doctype html>
 <html>
-<head>
+  <head>
 
-    <meta charset="utf-8">
-    <title>Dropdown webcomponent</title>
+      <meta charset="utf-8">
+      <title>DHW - New Table</title>
 
-    <!-- Imports polyfill -->
-    <script type="text/javascript">
-    function loadScript(src) {
-        return new Promise(function(resolve, reject) {
-            const script = document.createElement('script');
-            script.src = src;
-            script.onload = resolve;
-            script.onerror = reject;
-            document.head.appendChild(script);
-            });
-        }
-    (function() {
-      if ('registerElement' in document
-          && 'import' in document.createElement('link')
-          && 'content' in document.createElement('template')) {
-        // platform is good!
-      } else {
-        loadScript('polyfill/custom-elements/custom-elements.min.js')
-        loadScript('polyfill/html-imports/html-imports.min.js')
-      }
-    })();
-    </script>
+      <style media="screen">
+          body * {
+              font-family: 'helvetica', helvetica, sans-serif;
+          }
+      </style>
+      <link rel="stylesheet" type="text/css" href="/dist/ui-components/table/table.css">
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
 
-    <!-- Imports custom element -->
-    <link rel="import" href="ui-components/searchbar/search-bar.html">
-    <link rel="import" href="ui-components/dropdown/drop-down-lite.html">
-    <link rel="import" href="ui-components/table-item-count/table-item-count.html">
-    <link rel="import" href="ui-components/pagination/pagination.html">
-    <link rel="import" href="ui-components/tbody-groups/tbody-groups.html">
-    <link rel="import" href="ui-components/table/table.html">
-    <link rel="import" href="ui-components/table-header/table-header.html">
-
-
-    <style media="screen">
-        body * {
-            font-family: 'helvetica', helvetica, sans-serif;
-        }
-    </style>
-</head>
-<body>
-
-    <div id="table"></div>
-    <search-bar notify-element="#table">
-        <input>
-    </search-bar>
-
-    <br><br>
-
-    <!-- Runs custom element -->
-    <drop-down role="navigation">
-        <dropdown-label button tabindex="0">
-            Add New...
-            <svg class="icon icon-downCarret"><use xlink:href="assets/duo-icons.svg#icon-thickDownCarret"></use></svg>
-        </dropdown-label>
-        <dropdown-content hidden>
-            <ul>
-                <li> <a data-mixpanel-event-type="user" href="/users/add"> User </a> </li>
-                <li> <a data-mixpanel-event-type="application" href="/applications/add"> Application </a> </li>
-                <li> <a data-mixpanel-event-type="group" href="/groups/add"> Group </a> </li>
-            </ul>
-        </dropdown-content>
-    </drop-down>
-
-    <!-- Runs custom element -->
-    <table-item-count>
-      <span>Show</span>
-      <select is="table-item-count-select" name="table-item-count-select">
-        <option value="10" selected>10</option>
-        <option value="25">25</option>
-        <option value="50">50</option>
-        <option value="100">100</option>
-      </select>
-      <span> applications</span>
-      <span>1-25 of 380 total</span>
-    </table-item-count>
-
-    <table-pagination data-pages="20" data-current="1">
-    </table-pagination>
-
-    <table is="duo-table" filter="" sort="" search-param="" display-start="" display-length="" search-src="assets/groups.json">
-        <thead>
-            <tr></tr>
-        </thead>
-        <tbody is="tbody-groups">
-
-        </tbody>
-    </table>
-
-    <br><br>
-
-    <table-header sort="">
-      <span>Header Text</span>
-        <tableheader-sort>
-          <svg class="icon icon-upCarret"><use xlink:href="assets/duo-icons.svg#icon-thickUpCarret"></use></svg>
-        </tableheader-sort>
-    </table-header>
-
-    <script defer src="polyfill/svgxuse/svgxuse.min.js"></script>
-
-</body>
+  </body>
 </html>
