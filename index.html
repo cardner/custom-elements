@@ -14,6 +14,21 @@
   </head>
   <body>
     <h1>Hello, world!</h1>
+
+    <div class="table-view-header">
+      <span class="table-view-count"><span class="bold">Showing 1-25</span> of <span class="bold">803 items</span></span>
+      <form id="table-view-search" class="table-view-search" formmethod="get">
+        <input type="search" placeholder="Filter by user, application, or group">
+        <button type="submit"><svg class="icon icon-search"><use xlink:href="assets/duo-icons.svg#icon-search"></use></svg></button>
+      </form>
+      <div class="table-view-download">
+        <span class="bold">Download:</span>
+        <ul class="download-list">
+          <li class="download-item"><a href="#">csv</a></li>
+          <li class="download-item"><a href="#">json</a></li>
+        </ul>
+      </div>
+    </div>
     <table>
       <thead>
         <tr>
