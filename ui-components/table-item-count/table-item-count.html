@@ -1,33 +1,34 @@
 <script>
 
-  // var select = document.getElementsByName('table-item-count-select');
-  //
-  // select.onclick = function {
-  //   console.log(select.value);
-  // }
+  class TableItemCount extends HTMLElement {
 
-  class TableItemCountSelect extends HTMLElement {
+    constructor() {
+        super(); // always call super() first in the ctor.
 
-    var select = document.getElementsByName('table-item-count-select');
-
-    console.log(select);
-
+    }
   }
 
+  class TableItemCountSelect extends HTMLSelectElement {
 
+    constructor() {
+        super(); // always call super() first in the ctor.
 
-  // select.addEventListener('change', function() {
-  //   var index = select.selectedIndex;
-  //   console.log('Selected option index: ' + index);
-  // })
+        var select = this.querySelector('table-item-count-select');
+
+        select.addEventListener('change', function() {
+
+        var index = selectElem.selectedIndex;
+        console.log(index);
+
+      })
+    }
+  }
 
   // imports are loaded and elements have been registered
   window.addEventListener('DOMContentLoaded', e => {
     console.log('web componenets ready');
     // replace drop-down element with custom component
     window.customElements.define('table-item-count', TableItemCount);
-    window.customElemets.define('table-item-count-select', TableItemCountSelect);
-    window.customElements.define('table-item-count-range', TableItemCountRange);
-    window.customElements.define('table-item-count-total', TableItemCountTotal);
+    window.customElements.define('table-item-count-select', TableItemCountSelect, {extends: 'select'});
   })
 </script>
