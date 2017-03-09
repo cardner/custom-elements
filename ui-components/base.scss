@@ -1,3 +1,8 @@
 @import "variables";
 @import "mixins";
 @import "extends";
+
+html {
+  padding: 2.875rem;
+  background-color: #f7f7f7;
+}

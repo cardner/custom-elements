@@ -62,19 +62,14 @@ td:first-of-type {
   text-align: right;
 }
 
-html {
-  padding: 2.875rem;
-  background-color: #f7f7f7;
-}
-
-.bold {
-  font-weight: 700;
-}
-
 // table view header
 .table-view-header {
   padding: 0.75rem;
   background-color: #ffffff;
+}
+
+.table-view-label {
+  font-weight: 700;
 }
 
 .table-view-search {
