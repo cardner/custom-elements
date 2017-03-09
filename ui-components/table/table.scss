@@ -97,6 +97,7 @@ td:first-of-type {
     display: inline-block;
     padding: 1.0rem 0.375rem 1.0rem 2.5rem;
     width: 100%;
+    border: 2px solid #d2d2d2;
     @include border-radius(3px);
     @include breakpoint(large) {
       width: 18.75rem;
@@ -123,9 +124,6 @@ td:first-of-type {
   margin: 0;
   padding: 0;
   list-style: none;
-  // @include breakpoint(medium) {
-  //   align-self: flex-end;
-  // }
 }
 
 .download-item {
@@ -140,6 +138,9 @@ td:first-of-type {
       right: 0;
       left: 0;
     }
+  }
+  &:last-child {
+    padding-right: 0;
   }
   a {
     text-transform: uppercase;
