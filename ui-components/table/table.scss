@@ -64,6 +64,17 @@ td:first-of-type {
   margin-bottom: 1.0rem;
   padding: 0.75rem;
   background-color: #ffffff;
+  @include breakpoint(medium) {
+    display: flex;
+    align-items: center;
+  }
+  span {
+    &:first-of-type {
+      @include breakpoint(medium) {
+
+      }
+    }
+  }
 }
 
 .table-view-label {
@@ -71,9 +82,16 @@ td:first-of-type {
   font-weight: 700;
 }
 
+.text-deemphasize {
+  font-weight: 400;
+}
+
 .table-view-search {
   position: relative;
   margin: 1.0rem 0;
+  @include breakpoint(medium) {
+    margin: 0 auto 0 2.0rem;
+  }
   input[type="search"] {
     -webkit-appearance: textfield;
     display: inline-block;
@@ -81,7 +99,7 @@ td:first-of-type {
     width: 100%;
     @include border-radius(3px);
     @include breakpoint(large) {
-      width: 38.625rem;
+      width: 18.75rem;
     }
   }
   button {
@@ -105,6 +123,9 @@ td:first-of-type {
   margin: 0;
   padding: 0;
   list-style: none;
+  // @include breakpoint(medium) {
+  //   align-self: flex-end;
+  // }
 }
 
 .download-item {
