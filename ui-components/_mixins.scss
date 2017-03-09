@@ -19,3 +19,21 @@
 @mixin no-box-shadow {
     box-shadow: none;
 }
+// breakpoints
+@mixin breakpoint($bp) {
+  @if $bp == xlarge {
+    @media (min-width: 70em) { @content ; }
+ }
+  @else if $bp == large {
+    @media (min-width: 64em) { @content ; }
+ }
+   @else if $bp == medium {
+    @media (min-width: 50em) { @content ; }
+ }
+  @else if $bp == small {
+    @media (min-width: 37.5em)  { @content ; }
+ }
+ @else if $bp == xsonly {
+    @media (max-width: 37.5em)  { @content ; }
+ }
+}
