@@ -1,5 +1,6 @@
 @import "../base";
 
+// general table styles
 table {
   width: 100%;
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
@@ -7,24 +8,46 @@ table {
   background-color: #FFFFFF;
   text-align: left;
   border-collapse: collapse;
+  // common styles for svgs in tables
   svg {
     display: inline-block;
     width: 1.0em;
     height: 0.4em;
     line-height: 0;
     stroke-width: 0;
-    color: #9B9B9B;
-    stroke: currentColor;
-    fill: currentColor;
     vertical-align: bottom;
     margin-bottom: 5px;
+    transition: all 0.25s ease;
+    &:hover,
+    &:focus {
+      transform: rotate(180deg);
+      cursor: pointer;
+    }
   }
-  ul,
+  ul, // keeping these list styles specific to tables
   li {
     margin: 0;
     padding: 0;
     list-style: none;
     font-size: $default-text-size;
+  }
+}
+
+// location-specific svg style
+svg {
+  th & {
+    color: #9B9B9B;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+  td & {
+    color: #000000;
+    stroke: currentColor;
+    fill: currentColor;
+    transform: rotate(90deg);
+    height: 0.8em;
+    margin-bottom: 3px;
+    margin-right: 3px;
   }
 }
 
@@ -55,8 +78,13 @@ span + span {
 
 th:first-of-type,
 td:first-of-type {
-  width: 7.0em;
+  width: 8.0em;
   text-align: right;
+}
+
+// special highlight colors
+.table-cell-fraud {
+  border-left: solid 5px #D4423B;
 }
 
 // table view header
